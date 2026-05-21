@@ -1489,7 +1489,7 @@
                     black_name: bName,
                     difficulty: difficulty,
                     time_limit: timeLimit
-                };
+                });
 
                 const fenValue = fen ? fen.trim() : null;
                 if (fenValue) payload.fen = fenValue;
@@ -2101,13 +2101,12 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-leaveConfirmNo.addEventListener('click', () => {
+if (leaveConfirmNo) leaveConfirmNo.addEventListener('click', () => {
     leaveConfirmOverlay.classList.remove('active');
     leaveConfirmOverlay.hidden = true;
-
     lastFocusedElement?.focus();
 });
-leaveConfirmYes.addEventListener('click', () => {
+if (leaveConfirmYes) leaveConfirmYes.addEventListener('click', () => {
    window.location.href = leaveConfirmYes.dataset.href || '/';
 });
             
